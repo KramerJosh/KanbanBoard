@@ -6,6 +6,8 @@ dotenv.config();
 import express from 'express';
 import routes from './routes/index.js';
 import { sequelize } from './models/index.js';
+// import cors from "cors"; //Will need CORS for cross-origin
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -15,6 +17,9 @@ app.use(express.static('../client/dist'));
 
 app.use(express.json());
 app.use(routes);
+// app.use(cors({ origin: "http://your-frontend.com", credentials: true })); //maybe use CORS?
+
+
 
 sequelize.sync({force: forceDatabaseRefresh}).then(() => {
   app.listen(PORT, () => {

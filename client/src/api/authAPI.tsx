@@ -4,7 +4,7 @@ const login = async (userInfo: UserLogin) => {
     // TODONE: make a POST request to the login route
 
   try {
-    const response = await fetch("/api/login", {
+    const response = await fetch("/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -19,7 +19,7 @@ const login = async (userInfo: UserLogin) => {
     return await response.json(); 
   } catch (error) {
     console.error("Login error:", error);
-    return null;
+    return 'null';
   }
 };
 

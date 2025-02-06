@@ -22,6 +22,7 @@ const Login = () => {
     try {
       const data = await login(loginData);
       Auth.login(data.token);
+      console.log('login successful', data.token)
     } catch (err) {
       console.error('Failed to login', err);
     }

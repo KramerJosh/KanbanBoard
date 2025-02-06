@@ -20,6 +20,7 @@ export const authenticateToken = (
     jwt.verify(token, secretKey, (err, user) => {
       if (err) {
         return res.sendStatus(403); // Forbidden
+        
       }
 
       req.user = user as JwtPayload;
