@@ -12,7 +12,7 @@
   "client:build": "cd client && npm run build",
   "client:dev": "cd client && npm run dev",
   "build": "cd client && npm run build",
-  "seed": "cd server && npm run seed || exit 1",
+  "seed": "cd server && npm run build:server && node dist/seeds/index.js || exit 1",
   "render-build": "npm install && npm run build"
 }
 ,
